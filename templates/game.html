@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <button type="button" onclick="window.location='/';" >Quit</button>
+</head>
+<body>
+    <h1>Devine quel est le mot</h1>
+    <div id="life">{{word.life}}</div>
+        <div>
+            <input type="text" name="rep" id="rep" onkeyup="letterOnly(this)" maxlength="27">
+            <button type="button" id="submit" onclick="Result('{{word.word_search}}')">soumettre</button>
+        </div>
+    <h3 id="log"></h3>
+    <script src="../static/game.js"></script>
+</body>
+</html>
