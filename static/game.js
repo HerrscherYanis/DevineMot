@@ -5,7 +5,7 @@ function Result(word){
     if(verifySpe(rep.value) == false){
         life.innerHTML = life.textContent - 1
         let [valid, not_valid, comment] = verifyRep(word,rep.value)
-        log.innerHTML += `<p>${valid} lettres bonnes, ${not_valid} lettres mal placées, ${rep.value} ${comment}\n<p>`;
+        log.innerHTML += `<p>${valid} lettres bien plaçées, ${not_valid} lettres mal placées, ${rep.value} ${comment}\n<p>`;
         Win(life.textContent,log.textContent,word,rep.value)
         GameOver(life.textContent,log.textContent,word)
     }

@@ -12,7 +12,7 @@ function begin(){
     else if(difficult[difficult.length - 1] == "medium"){x = Math.floor(10*1.5)}
     else if(difficult[difficult.length - 1] == "hard"){x = 10*1}
     else{x = Math.floor(10*0.1)}
-    document.getElementById("congrat").innerHTML = `<p>Bravo Vous avez trouver le mot en ${x - sessionStorage.getItem("life")} essaie.</p>`
+    document.getElementById("congrat").innerHTML = `<p>Vous avez trouvé le mot en ${x - sessionStorage.getItem("life")} essaies.</p>`
     list = sessionStorage.getItem("log").split("\n")
     for(let i = 0; i < list.length ; i++)
     {
