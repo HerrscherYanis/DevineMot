@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request , jsonify
+from flask import Flask, render_template
 from world_game import User
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def game_Page(difficulty):
     elif(difficulty == "hard"):
         user = User(1)
     else:
-        user = User(0.1)
+        return render_template('404.html')
     return render_template('game.html', pageTitle="Devine le mot", word = user)
 
 @app.route('/game/win')
@@ -30,5 +30,5 @@ def final():
 if __name__ == '__main__':
     app.run(
         host="127.0.0.1",
-        port=5000,
+        port=80,
         debug = False)
