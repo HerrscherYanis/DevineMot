@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from world_game import User
+from word_game import User
 
 app = Flask(__name__)
 
