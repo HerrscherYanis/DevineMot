@@ -13,6 +13,10 @@ function begin(){
     else if(difficult[difficult.length - 1] == "hard"){x = 10*1}
     else{x = Math.floor(10*0.1)}
     document.getElementById("congrat").innerHTML = `<p>Bravo Vous avez trouver le mot en ${x - sessionStorage.getItem("life")} essaie.</p>`
-    document.getElementById("logs").innerHTML = `<p>${sessionStorage.getItem("log")}</p>`
+    list = sessionStorage.getItem("log").split("\n")
+    for(let i = 0; i < list.length ; i++)
+    {
+        document.getElementById("logs").innerHTML += `<p>${list[i]}\n</p>`
+    }
     console.log(sessionStorage.getItem("log"));
 }

@@ -11,25 +11,6 @@ function Result(word){
     }
 }
 
-// function StoreInLog(word){
-//     list = sessionStorage.getItem("log");
-//     console.log(list);
-//     if(list == null){
-//         delete list;
-//         sessionStorage.setItem("log", []);
-//         list = sessionStorage.getItem("log");
-//     }
-//     x = []
-//     for (let i = 0; i < list.length; i++) {
-//         console.log(list[i]);
-//         x.push(list[i])
-//     }
-//     x.push(word)
-//     sessionStorage.setItem("log", x);
-//     console.log(x);
-// }
-
-
 function letterOnly(input){
     input.value = input.value.replace(/[^a-z]$/,"")
 }
@@ -42,17 +23,18 @@ function verifyRep(word,rep){
     bof = 0
     yes = 0
     for(let i = 0; i < x; i++){
-        for(let y = 0; y < x; y++){
-            if(rep.charAt(i) == word.charAt(y)){
-                bof += 1
-                break
-            }
-        }
         if(rep.charAt(i) == word.charAt(i)){
+            word = word.replace(word[i], " ");
             yes += 1
         }
     }
-    return [yes, bof, omment]
+    for(let i = 0; i < x; i++){
+        if(word.includes(rep[i])){
+            word = word.replace(rep[i], " ");
+            bof +=1
+        }
+    }
+    return [yes, bof, comment]
 }
 
 function verifySpe(word){

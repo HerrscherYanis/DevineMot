@@ -16,7 +16,6 @@ balai
 banque
 baron
 barrage
-beauté
 besoin
 bateau
 bijoux
@@ -35,7 +34,6 @@ cabane
 cabine
 cadre
 cadeau
-café
 calin
 camion
 canon
@@ -69,9 +67,7 @@ confort
 copie
 corail
 corde
-cornée
 costume
-côté
 cousin
 couvert
 crayon
@@ -104,7 +100,6 @@ foire
 force
 formule
 fortune
-fossé
 fouet
 fraise
 france
