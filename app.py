@@ -29,6 +29,6 @@ def final():
 
 if __name__ == '__main__':
     app.run(
-        host="10.1.0.4",
+        host="98.66.153.56",
         port=80,
         debug = False)
