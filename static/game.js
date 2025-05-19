@@ -4,8 +4,8 @@ function Result(word){
     const log = document.getElementById("log");
     if(verifySpe(rep.value) == false){
         life.innerHTML = life.textContent - 1
-        let [valid, comment] = verifyRep(word,rep.value)
-        log.innerHTML += `<p>${valid} chiffre bonne, ${rep.value} ${comment}\n<p>`;
+        let [valid, not_valid, comment] = verifyRep(word,rep.value)
+        log.innerHTML += `<p>${valid} lettres bonnes, ${not_valid} lettres mal placées, ${rep.value} ${comment}\n<p>`;
         Win(life.textContent,log.textContent,word,rep.value)
         GameOver(life.textContent,log.textContent,word)
     }
@@ -39,13 +39,20 @@ function verifyRep(word,rep){
     if(word.length < rep.length){comment="est trop grand.";x = word.length}
     else if(word.length > rep.length){comment="est trop Petit."}
     else{comment= "est de bonne taille."}
+    bof = 0
     yes = 0
     for(let i = 0; i < x; i++){
-        if(word.charAt(i) == rep.charAt(i)){
+        for(let y = 0; y < x; y++){
+            if(rep.charAt(i) == word.charAt(y)){
+                bof += 1
+                break
+            }
+        }
+        if(rep.charAt(i) == word.charAt(i)){
             yes += 1
         }
     }
-    return [yes, comment]
+    return [yes, bof, omment]
 }
 
 function verifySpe(word){
