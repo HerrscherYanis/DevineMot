@@ -5,10 +5,8 @@
 </head>
 <body>
     <h1>Devine quel est le mot</h1>
-    <p align="center"></p>
-        <div id="life">{{word.life}}</div>
-        <div> vie restant.</div>
-    </p>
+        <span id="life">{{word.life}}</span>
+        <span> vie restant.</span>
         <div>
             <input type="text" name="rep" id="rep" onkeyup="letterOnly(this)" maxlength="27">
             <button type="button" id="submit" onclick="Result('{{word.word_search}}')">soumettre</button>
