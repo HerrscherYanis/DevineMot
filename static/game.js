@@ -6,7 +6,7 @@ function Result(word){
     if(verifySpe(rep.value) == false){
         life.innerHTML = life.textContent - 1
         let [valid, not_valid, comment] = verifyRep(word,rep.value)
-        log.innerHTML += `<p>${valid} lettres bien plaçées, ${not_valid} lettres mal placées, ${rep.value} ${comment}\n<p>`;
+        log.innerHTML += `<p>${valid} lettres bien plaçées, ${not_valid} lettres mal placées, <span style="font-weight:bold">${rep.value}</span> ${comment}\n</p>`;
         x = Win(life.textContent,log.textContent,word,rep.value)
         GameOver(life.textContent,log.textContent,word, x)
     }
@@ -18,8 +18,8 @@ function letterOnly(input){
 
 function verifyRep(word,rep){
     x = rep.length
-    if(word.length < rep.length){comment="est trop grand.";x = word.length}
-    else if(word.length > rep.length){comment="est trop Petit."}
+    if(word.length < rep.length){comment="est trop long.";x = word.length}
+    else if(word.length > rep.length){comment="est trop court."}
     else{comment= "est de bonne taille."}
     bof = 0
     yes = 0
