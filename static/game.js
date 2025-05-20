@@ -2,6 +2,7 @@ function Result(word){
     const rep = document.getElementById("rep");
     const life = document.getElementById("life");
     const log = document.getElementById("log");
+    console.log(word)
     if(verifySpe(rep.value) == false){
         life.innerHTML = life.textContent - 1
         let [valid, not_valid, comment] = verifyRep(word,rep.value)
@@ -28,7 +29,7 @@ function verifyRep(word,rep){
             yes += 1
         }
     }
-    for(let i = 0; i < x; i++){
+    for(let i = 0; i < rep.length; i++){
         if(word.includes(rep[i])){
             word = word.replace(rep[i], " ");
             bof +=1
