@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 from word_game import User
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def game_Page(difficulty):
     elif(difficulty == "hard"):
         user = User(1)
     else:
-        return render_template('404.html')
+        return abort(404)
     return render_template('game.html', pageTitle="Devine le mot", word = user)
 
 @app.route('/game/win')
