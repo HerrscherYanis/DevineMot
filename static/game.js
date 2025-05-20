@@ -2,7 +2,6 @@ function Result(word){
     const rep = document.getElementById("rep");
     const life = document.getElementById("life");
     const log = document.getElementById("log");
-    console.log(word)
     if(verifySpe(rep.value) == false){
         life.innerHTML = life.textContent - 1
         let [valid, not_valid, comment] = verifyRep(word,rep.value)
