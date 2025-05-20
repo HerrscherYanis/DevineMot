@@ -2,12 +2,13 @@ function Result(word){
     const rep = document.getElementById("rep");
     const life = document.getElementById("life");
     const log = document.getElementById("log");
+    console.log(word)
     if(verifySpe(rep.value) == false){
         life.innerHTML = life.textContent - 1
         let [valid, not_valid, comment] = verifyRep(word,rep.value)
         log.innerHTML += `<p>${valid} lettres bien plaçées, ${not_valid} lettres mal placées, ${rep.value} ${comment}\n<p>`;
-        Win(life.textContent,log.textContent,word,rep.value)
-        GameOver(life.textContent,log.textContent,word)
+        x = Win(life.textContent,log.textContent,word,rep.value)
+        GameOver(life.textContent,log.textContent,word, x)
     }
 }
 
@@ -51,10 +52,11 @@ function Win(life,log,word,rep){
         sessionStorage.setItem("log", log);
         sessionStorage.setItem("difficulty", window.location.href);
         location.replace("/game/win")
+        return 1
     }
 }
-function GameOver(life,log,word){
-    if(life <= 0){
+function GameOver(life,log,word, x){
+    if(life <= 0 && x != 1){
         sessionStorage.setItem("word", word);
         sessionStorage.setItem("difficulty", window.location.href);
         location.replace("/game/finality")
